@@ -1,19 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 // REVERSE an array
-int main()
+
+void arrayReverse(int arr[], int n)
 {
-    int n;
-    cout<<"Enter size: ";
-    cin>>n;
-    int arr[n];
-    for(int i=0;i<n;i++)
-    {
-        cin>>arr[i];
-    }
-
-
-// Method 1: creating a new array and storing the elements in reverse order
+    // Method 1: creating a new array and storing the elements in reverse order
     // int rev[n];
     // for(int i=0;i<n;i++)
     // {
@@ -47,7 +38,21 @@ int main()
     {
         cout<<arr[i]<<" ";
     }
+}
 
+
+int main()
+{
+    int n;
+    cout<<"Enter size: ";
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+
+    arrayReverse(arr,n);
     return 0;
 
 }
