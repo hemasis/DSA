@@ -3,11 +3,11 @@ using namespace std;
 
 bool checkSort(int arr[], int n)
 {
-    for(int i=1; i<n; i++)
+    for(int i=1; i<n; i++)   // start from the second index and goes till n(value given by the user)
     {
-        if(arr[i]<arr[i-1])
+        if(arr[i]<arr[i-1])  // checks the 2nd element is less than its previous element or not 
         {
-            return false;
+            return false;  
         }
     }
     return true;
