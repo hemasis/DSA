@@ -1,53 +1,65 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// void leftrotateD(int arr[], int n, int d)
-// {
-//     auto leftrotateone = [](int arr[], int n) {
-//         int temp = arr[0];
-//         for(int i=0;i<n;i++)
-//         {
-//             arr[i] = arr[i+1];
-//         }
-//         arr[n-1] = temp;
-//     };
-
-//     for(int i=0;i<d;i++)
-//     {
-//         leftrotateone(arr, n);
-//     }
-// }
-
-double avg(int arr[], int n)
+int linearSearch(int arr[], int n, int key)
 {
-    int sum=0;
-    for(int i=0;i<n;i++)
+    for(int  i=0;i<n;i++)
     {
-        sum += arr[i];
+        if(arr[i] == key)
+        {
+            return i;
+        }
     }
-    return (double)sum/n;
+    return -1;
 }
-
 int main()
 {
-    int n, d;
-    cout << "Enter size: ";
+    int n;
+    cout << "Enter the size of the array: ";
     cin >> n;
+
     int arr[n];
-    cout << "Enter elements: ";
-    for (int i = 0; i < n; i++)
+    cout << "Enter the elements of the array: ";
+    for(int i = 0; i < n; i++)
     {
         cin >> arr[i];
     }
 
-    cin>>d;
-    // leftrotateD(arr, n, d);
-    
-    for (int i = 0; i < n; i++)
+    int key;
+    cout<<"enter the element to be searched: ";
+    cin>>key;
+
+    int result = linearSearch(arr, n, key);
+    if(result != -1)
     {
-        // cout << "" << arr[i] << " ";
-        cout<<"";
+        cout<<"Element found at index: "<<endl;
+    }
+    else 
+    {
+        cout<<"Element not found."<<endl;
+    }
+   
+    // while(result == -1) {  // this loop will run until the element is found
+
+    char choice = 'y';
+    while(choice == 'y' || choice == 'Y')
+    {
+            int key;
+            cout << "Please enter another element to search: ";
+            cin >> key;
+
+            int result = linearSearch(arr, n, key);
+            if(result != -1)
+            {
+                cout << "element found at index: "<< result << endl;
+            }
+    else 
+    {
+        cout << "Element not found." << endl;
     }
 
-    return 0;
+    cout << "Do you want to search another element? (y/n): ";
+    cin >> choice;
+    
+return 0;
 }
