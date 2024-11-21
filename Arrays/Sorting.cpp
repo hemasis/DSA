@@ -6,16 +6,16 @@ void selectionsort(int arr[], int n)
 {
     for(int i=0;i<=n-2;i++)
     {
-        int mini = i;
+        int smallestindex = i;
         for(int j=i;j<=n-1;j++)
         {
-            if(arr[j]<arr[mini])
+            if(arr[j]<arr[smallestindex])
             {
-                mini = j;
+                smallestindex = j;
             }
         }
-        int temp = arr[mini];
-        arr[mini] = arr[i];
+        int temp = arr[smallestindex];
+        arr[smallestindex] = arr[i];
         arr[i] = temp;
 
     } 
